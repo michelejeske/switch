@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura Switch-Case</title>
+   <style>
+    body{
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        background-color: #527681;
+    }
+
+    img{
+        max-width: 250px;
+        max-height: 250px;
+        margin: 10px;
+    }
+   </style>
+</head>
+<body>
+
+<h2>Selecione o dia da semana:</h2>
+
+<select name="" id="diaSemana" onchange="mostrarMensagem()">
+    <option value="default">Selecione um dia</option>
+    <option value="segunda">Segunda-Feira</option>
+    <option value="terca">Terça-Feira</option>
+    <option value="quarta">Quarta-Feira</option>
+    <option value="quinta">Quinta-Feira</option>
+    <option value="sexta">Sexta-Feira</option>
+    <option value="sabado">Sábado</option>
+    <option value="domingo">Domingo</option>
+</select>
+
+<div id="mensagem"></div>
+
+<script>
+
+    function mostrarMensagem(){
+    var select = document.getElementById('diaSemana');
+    var diaSelecionado = select.value;
+    var mensagemElemento = document.getElementById('mensagem');
+    var mensagem = "";
+    var imagem = "";
+
+    switch (diaSelecionado) {
+        case "segunda":
+            mensagem = "Bom dia! Mais uma semana começando.";
+            imagem = "https://media3.giphy.com/media/l1AsyjZ8XLd1V7pUk/giphy.gif?cid=ecf05e477acigndjah0d5z7h67fldmxwdjof58vpk4y8rpdx&ep=v1_gifs_related&rid=giphy.gif&ct=g";
+            break;
+            case "terca": mensagem = "Olá Terça-feira já está aqui, vamos trabalhar!";
+            imagem = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGE4cHozZGxjZW43eHZxMnJrdXNzNjRicHc2M2h4ZXhqcXVxYmx5NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ISOckXUybVfQ4/giphy.gif";
+            break;
+            case "quarta": mensagem = "Boa Quarta-feira! O meio da semana chegou.";
+            imagem = "https://media3.giphy.com/media/QVgP8ntqkay08/giphy.gif?cid=ecf05e47xrvykfkj90i38r3lut9rlinpw36l0zdisvy21fy3&ep=v1_gifs_related&rid=giphy.gif&ct=g";
+            break;
+            case "quinta": mensagem = "Quinta-feira, estamos quase lá continue firme!";
+            imagem = "https://media1.giphy.com/media/xT9DPiHFM8Iy3hiC3e/giphy.gif?cid=ecf05e47cs1pdsfgix2i9la2fw7j1hopfb9a8p5e91w0inyj&ep=v1_gifs_related&rid=giphy.gif&ct=g";
+            break;
+            case "sexta": mensagem = "Sextou! Finalmente Sexta-feira, vamos relaxar!";
+            imagem = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXgxdzNnOWUxbGFpMm9oa2kwcGZ4YjdwNW9tdXg3emgxZmtud2V1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nDSlfqf0gn5g4/giphy.gif";
+            break;
+            case "sabado": mensagem = "Sábado chegou, dia de aproveitar e descansar.";
+            imagem = "https://media4.giphy.com/media/3oEjHV0z8S7WM4MwnK/giphy.gif?cid=ecf05e472zhgzv15vfzsj80i5ykr1urev6kx1lnxa3yupzjs&ep=v1_gifs_related&rid=giphy.gif&ct=g";
+            break;
+            case "domingo": mensagem = "Feliz domingo! Dia de descanso e diversão.";
+            imagem = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3dvZzZoc3c0cWsyN2dseGx2MW50OHh5dzZjbHB1dnhvcGI1bTJraCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Sb7WSbjHFNIL6/giphy.gif";
+            break;
+            default:
+                mensagem = "Por favor, selecione um dia da semana.";
+                imagem = "";
+    }
+
+    mensagemElemento.innerHTML = "<p>" + mensagem +"<p>";
+    if (imagem !== "") {
+        mensagemElemento.innerHTML += "<img src='" + imagem + "' alt='Imagem do dia selecionado'>";
+    }   
+}
+</script>
+    
+</body> 
+</html>
